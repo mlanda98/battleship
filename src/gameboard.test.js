@@ -12,6 +12,7 @@ test('gameboard should be able to track the coordinates of all attacks and if a 
 
   gameBoard.receiveAttack(0, 0);
   expect(ship1.isSunk()).toBe(false);
+  expect(gameBoard.attacks).toEqual([{ "x": 0, "y": 0 }]);
   gameBoard.receiveAttack(1, 0);
   expect(ship1.isSunk()).toBe(true);
   gameBoard.receiveAttack(2, 3);
