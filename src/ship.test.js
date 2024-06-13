@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const { Ship } = require('./index');
+const { Ship } = require('./ship');
 
 test('should hit the ship and check if it has sunk', () => {
   const ship = new Ship(3);
