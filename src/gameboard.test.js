@@ -2,21 +2,43 @@
 const { Gameboard } = require('./gameboard');
 const { Ship } = require('./ship');
 
-test('gameboard should be able to track the coordinates of all attacks and if a ship has sunk', () => {
-  const ship1 = new Ship(2);
-  const ship2 = new Ship(3);
+test('placing a ship horizontal', () => {
+  const ship = new Ship(3);
+  const gameboard = new Gameboard();
+  gameboard.placeShip(ship, 2, 3, 'horizontal');
+  expect(gameboard.ships.length).toBe(1);
+});
 
-  const gameBoard = new Gameboard();
-  gameBoard.placeShip(ship1, 0, 0, 'horizontal');
-  gameBoard.placeShip(ship2, 2, 3, 'vertical');
+test('placing a ship vertically', () => {
+  const ship = new Ship(2);
+  const gameboard = new Gameboard();
+  gameboard.placeShip(ship, 5, 5, 'vertical');
+  expect(gameboard.ships.length).toBe(1);
+});
 
-  gameBoard.receiveAttack(0, 0);
-  expect(ship1.isSunk()).toBe(false);
-  expect(gameBoard.attacks).toEqual([{ "x": 0, "y": 0 }]);
-  gameBoard.receiveAttack(1, 0);
-  expect(ship1.isSunk()).toBe(true);
-  gameBoard.receiveAttack(2, 3);
-  gameBoard.receiveAttack(2, 4);
-  gameBoard.receiveAttack(2, 5);
-  expect(ship2.isSunk()).toBe(true);
+test('receiving an attack and hitting a ship', () => {
+  const ship = new Ship(3);
+  const gameboard = new Gameboard();
+  gameboard.placeShip(ship, 2, 3, 'horizontal');
+  const result = gameboard.receiveAttack(2, 3);
+  expect(result).toBe(true);
+  expect(ship.hits).toBe(1);
+});
+
+test('receiving an attack and missing a ship', () => {
+  const ship = new Ship(3);
+  const gameboard = new Gameboard();
+  gameboard.placeShip(ship, 2, 3, 'horizontal');
+  const result = gameboard.receiveAttack(5, 5);
+  expect(result).toBe(false);
+});
+
+test('receiving multiple attacks and sinking a ship', () => {
+  const ship = new Ship(3);
+  const gameboard = new Gameboard();
+  gameboard.placeShip(ship, 2, 3, 'horizontal');
+  gameboard.receiveAttack(2, 3);
+  gameboard.receiveAttack(3, 3);
+  gameboard.receiveAttack(4, 3);
+  expect(ship.sunk).toBe(true);
 });

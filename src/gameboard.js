@@ -26,7 +26,6 @@ class Gameboard {
         if (x === shipX && y === shipY) {
           ship.hit();
           hit = true;
-          this.attacks.push({ x, y });
         }
       });
     });
