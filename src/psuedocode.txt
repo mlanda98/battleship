@@ -1,0 +1,6 @@
+1. Make 2 players: computer and player
+2. Place ships with placeShip function for both computer and players but make them random by using the start button 
+3. hide ships in computer grid so that player can guess
+4. have computer ships that are attacked color the cells red when they miss shots color grey
+5. have player ships blue all time. When the computer attacks color the cells red and when they miss color the cells grey
+6. when all ships sink first for either the computer or player end the game and alert the winner using hit and isSunk
