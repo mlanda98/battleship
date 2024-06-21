@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const { Ship } = require('./ship');
+import Ship from './ship';
 
 test('should hit the ship and check if it has sunk', () => {
   const ship = new Ship(3);

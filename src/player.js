@@ -1,23 +1,20 @@
-const { Gameboard } = require('./gameboard');
-const { Ship } = require('./ship');
+import Gameboard from './gameboard';
 
-class Player {
-  constructor(isHuman) {
+export default class Player {
+  constructor(isHuman, boardSize) {
     this.isHuman = isHuman;
-    this.gameboard = new Gameboard();
-    this.ships = [];
+    this.gameboard = new Gameboard(boardSize);
   }
 
-  placeShip(length, x, y, orientation) {
-    const ship = new Ship(length);
-    this.gameboard.placeShip(ship, x, y, orientation);
+  placeShip(ship, x, y, orientation) {
+    return this.gameboard.placeShip(ship, x, y, orientation);
   }
 
   receiveAttack(x, y) {
     return this.gameboard.receiveAttack(x, y);
   }
-}
 
-module.exports = {
-  Player,
-};
+  allShipsSunk() {
+    return this.gameboard.allShipsSunk();
+  }
+}
