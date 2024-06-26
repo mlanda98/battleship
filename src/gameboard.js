@@ -47,6 +47,7 @@ export default class Gameboard {
       this.board[x][y] = 'hit';
       return { hit: true, ship };
     }
+    this.board[x][y] = 'miss';
     return { hit: false };
   }
 

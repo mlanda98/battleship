@@ -22,8 +22,10 @@ function gameLoop() {
 
   if (player.gameboard.allShipsSunk()) {
     endGame('Game Over! Computer wins!');
+    return;
   } else if (computer.gameboard.allShipsSunk()) {
     endGame('Game Over! You win!');
+    return;
   }
 
   if (currentPlayer === computer) {
@@ -38,6 +40,7 @@ function gameLoop() {
 function switchTurn() {
   currentPlayer = currentPlayer === player ? computer : player;
 }
+
 function renderBoard(boardId, gameboard, clickable) {
   const boardElement = document.getElementById(boardId);
   boardElement.innerHTML = '';
@@ -47,29 +50,34 @@ function renderBoard(boardId, gameboard, clickable) {
       const cell = document.createElement('div');
       cell.dataset.x = x;
       cell.dataset.y = y;
+      cell.classList.add('cell');
 
       if (gameboard.board[x][y] instanceof Ship) {
-        if (gameboard.board[x][y].isSunk()) {
-          cell.classList.add('ship', 'sunk');
-        } else {
-          cell.classList.add('ship');
-        }
+        cell.classList.add('ship');
+      } else if (gameboard.board[x][y] === 'hit') {
+        cell.classList.add('hit');
+      } else if (gameboard.board[x][y] === 'miss') {
+        cell.classList.add('miss');
       }
+
       if (clickable && currentPlayer === player) {
         cell.classList.add('clickable');
         cell.addEventListener('click', () => {
-          if (currentPlayer === player) {
+          if (currentPlayer === player && gameboard.isValidAttack(x, y)) {
             const attackResult = gameboard.receiveAttack(x, y);
             if (attackResult.hit) {
               cell.classList.add('hit');
+              if (gameboard.allShipsSunk()) {
+                endGame('You win! All computer ships are sunk');
+              } else {
+                switchTurn();
+                setTimeout(() => {
+                  gameLoop();
+                }, 1000);
+              }
             } else {
               cell.classList.add('miss');
-            }
-            cell.classList.remove('clickable');
-            
-            if (gameboard.allShipsSunk()) {
-              endGame('You win! All computer ships are sunk');
-            } else {
+              cell.classList.remove('clickable');
               switchTurn();
               setTimeout(() => {
                 gameLoop();
@@ -102,8 +110,6 @@ function placeShipsRandomly(gameboard) {
       x = Math.floor(Math.random() * gameboard.size);
       y = Math.floor(Math.random() * gameboard.size);
       orientation = Math.random() < 0.5 ? 'horizontal' : 'vertical';
-
-      console.log(`Retry: (${x}, ${y}) with orientation ${orientation}`);
     }
   }
 }
