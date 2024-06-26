@@ -20,7 +20,9 @@ export default class Gameboard {
     const shipCells = [];
     const shipObj = new Ship(ship.length);
 
-    for (let i = 0; i < ship.length; i++) {
+    const shipArray = Array.from({ length: ship.length }, () => null);
+
+    for (let i = 0; i < shipArray.length; i++) {
       const newX = orientation === 'horizontal' ? x + i : x;
       const newY = orientation === 'vertical' ? y + i : y;
 
@@ -39,13 +41,23 @@ export default class Gameboard {
   }
 
   receiveAttack(x, y) {
-    if (this.board[x][y] !== null) {
+    if (this.board[x][y] instanceof Ship) {
       const ship = this.board[x][y];
       ship.hit();
       this.board[x][y] = 'hit';
       return { hit: true, ship };
     }
     return { hit: false };
+  }
+
+  isValidAttack(x, y) {
+    if (x < 0 || x >= this.size || y < 0 || y >= this.size) {
+      return false;
+    }
+    if (this.board[x][y] === 'hit' || this.board[x][y] === 'miss') {
+      return false;
+    }
+    return true;
   }
 
   allShipsSunk() {

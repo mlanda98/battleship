@@ -1,44 +1,31 @@
-body{
+body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.game-container{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 5rem;
-
-}
-
-.grid-wrapper{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.gameboard{
+.board {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  width: 250px;
-  margin: 0 10px;
+  grid-template-columns: repeat(10, 30px);
+  grid-template-rows: repeat(10, 30px);
+  gap: 1px;
 }
 
-.cell{
-  width: 100%;
+.board div {
+  width: 30px;
   height: 30px;
-  background-color: #fff;
   cursor: pointer;
   border: 1px solid #ccc;
-  box-sizing: border-box;
 }
-.cell.clicked{
-  cursor: default;
+.hit {
+  background-color: red;
 }
 
-button{
+.miss{
+  background-color: grey;
+}
+
+button {
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
@@ -46,6 +33,10 @@ button{
   cursor: pointer;
 }
 
-.ship{
-  background-color:blue;
+.clickable{
+  cursor: pointer;
 }
+.ship {
+  background-color: blue;
+}
+

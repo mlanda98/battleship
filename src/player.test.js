@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable no-undef */
 import Player from './player';
 
@@ -20,7 +21,7 @@ test('places a ship for human player', () => {
     { length: shipLength },
     x,
     y,
-    orientation
+    orientation,
   );
 
   expect(shipPlaced).toBe(true);
@@ -62,7 +63,7 @@ test('places a ship for computer', () => {
     { length: shipLength },
     x,
     y,
-    orientation
+    orientation,
   );
 
   expect(shipPlaced).toBe(true);

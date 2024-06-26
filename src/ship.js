@@ -3,17 +3,17 @@
 export default class Ship {
   constructor(length) {
     this.length = length;
-    this.hits = 0;
+    this.hits = Array(length).fill(false);
   }
 
   hit() {
-    this.hits++;
+    const index = this.hits.findIndex((hit) => !hit);
+    if (index !== -1) {
+      this.hits[index] = true;
+    }
   }
 
   isSunk() {
-    if (this.hits === this.length) {
-      return true;
-    }
-    return false;
+    return this.hits.every((hit) => hit);
   }
 }
