@@ -2,13 +2,41 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(0, 145, 255);
+  color: white;
 }
 
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.gameboard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+img{
+height: 100px;
+}
 .board {
   display: grid;
   grid-template-columns: repeat(10, 30px);
   grid-template-rows: repeat(10, 30px);
   gap: 1px;
+}
+
+.lower-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 40px;
 }
 
 .board div {
@@ -17,6 +45,8 @@ body {
   cursor: pointer;
   border: 1px solid #ccc;
 }
+
+
 .hit {
   background-color: red;
 }
@@ -31,17 +61,16 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  background-color: rgb(15, 74, 202);
+  border: none;
+  color: white;
 }
 
 .clickable{
   cursor: pointer;
 }
 .ship {
-  background-color: blue;
+  background-color: default;
 }
 
 
-
-.sunk{
-  background-color: darkblue;
-}

@@ -6,11 +6,14 @@ export default class Ship {
     this.hits = new Array(length).fill(false);
   }
 
-  hit(index) {
-    this.hits[index] = true;
+  hit() {
+    const index = this.hits.findIndex((hit) => !hit);
+    if (index !== -1) {
+      this.hits[index] = true;
+    }
   }
 
   isSunk() {
-    return this.hits.every((hit) => hit) === true;
+    return this.hits.every((hit) => hit);
   }
 }

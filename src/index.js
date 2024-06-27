@@ -1,10 +1,12 @@
+/* eslint-disable no-console */
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-loop-func */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-plusplus */
 /* eslint-disable radix */
 
 import Ship from './ship';
 import Player from './player';
-import Gameboard from './gameboard';
 import computerTurn from './computerTurn';
 
 let player;
@@ -17,13 +19,17 @@ function endGame(message) {
 }
 
 function gameLoop() {
+  console.log('Start game loop');
   renderBoard('computerBoard', computer.gameboard, true);
   renderBoard('playerBoard', player.gameboard, false);
 
   if (player.gameboard.allShipsSunk()) {
+    console.log('player has sunk all ships');
     endGame('Game Over! Computer wins!');
     return;
-  } else if (computer.gameboard.allShipsSunk()) {
+  }
+  if (computer.gameboard.allShipsSunk()) {
+    console.log('computer has sunk all ships');
     endGame('Game Over! You win!');
     return;
   }

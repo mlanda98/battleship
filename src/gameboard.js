@@ -43,7 +43,7 @@ export default class Gameboard {
   receiveAttack(x, y) {
     if (this.board[x][y] instanceof Ship) {
       const ship = this.board[x][y];
-      ship.hit();
+      ship.hit(y);
       this.board[x][y] = 'hit';
       return { hit: true, ship };
     }
