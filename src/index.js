@@ -98,8 +98,7 @@ function renderBoard(boardId, gameboard, clickable) {
   }
 
   if (currentPlayer === player) {
-    messagesElement.textContent =
-      "Your turn! Click on oppenent's board to attack";
+    messagesElement.textContent = "Your turn! Click on oppenent's board to attack";
   } else {
     messagesElement.textContent = "Computer's turn";
   }
