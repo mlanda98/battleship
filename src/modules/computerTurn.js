@@ -1,6 +1,3 @@
-import Ship from './ship';
-import Player from './player';
-
 export default function computerTurn(player, renderBoard, endGame) {
   let x;
   let y;
