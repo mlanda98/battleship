@@ -1,1 +1,2 @@
-# eslint-prettier-babel-package
+# battleship
+
