@@ -5,9 +5,9 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable radix */
 
-import Ship from './ship';
-import Player from './player';
-import computerTurn from './computerTurn';
+import Ship from './modules/ship';
+import Player from './modules/player';
+import computerTurn from './modules/computerTurn';
 
 let player;
 let computer;
@@ -98,8 +98,7 @@ function renderBoard(boardId, gameboard, clickable) {
   }
 
   if (currentPlayer === player) {
-    messagesElement.textContent =
-      "Your turn! Click on oppenent's board to attack";
+    messagesElement.textContent = "Your turn! Click on oppenent's board to attack";
   } else {
     messagesElement.textContent = "Computer's turn";
   }
