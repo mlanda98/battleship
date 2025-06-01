@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-# eslint-prettier-babel-package
-=======
 # battleship
 
 A browser-based version of the classic game Battleship, built using JavaScript, HTML, and CSS — developed using Test Driven Development with Jest.
@@ -8,7 +5,8 @@ A browser-based version of the classic game Battleship, built using JavaScript, 
 ---
 
 📌 Features
-- Test Driven  with Jest
+
+- Test Driven with Jest
 - Modular architecture (Ship, Gameboard, Player)
 - DOM separated from logic
 - Play against a basic AI
@@ -17,19 +15,19 @@ A browser-based version of the classic game Battleship, built using JavaScript, 
 ---
 
 🛠️ Tech Stack
+
 - JavaScript
 - Webpack
-- ESLint 
+- ESLint
 - Prettier
 - localStorage API
 - HTML
 - CSS
 
-
-
 ---
 
 💻 Run It Locally
+
 - Clone the repository
   `git clone https://github.com/mlanda98/battleship.git`
 - Make sure you have Node.js installed, then run `npm install`
@@ -43,5 +41,6 @@ A browser-based version of the classic game Battleship, built using JavaScript, 
 ---
 
 📬 Contact
+
 - Email: mlandae16@gmail.com
->>>>>>> Stashed changes
+
