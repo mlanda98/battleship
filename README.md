@@ -1,6 +1,6 @@
 # battleship
 
-A browser-based version of the classic game Battleship, built using JavaScript, HTML, and CSS — developed using Test Driven Development with Jest.
+A browser-based version of the classic game Battleship, built using JavaScript, HTML, and CSS. Developed using Test Driven Development with Jest.
 
 ---
 
