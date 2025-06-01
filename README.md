@@ -16,6 +16,8 @@ A browser-based version of the classic game Battleship, built using JavaScript, 
 🛠️ Tech Stack
 - JavaScript
 - Webpack
+- ESLint 
+- Prettier
 - localStorage API
 - HTML
 - CSS
@@ -26,10 +28,14 @@ A browser-based version of the classic game Battleship, built using JavaScript, 
 
 💻 Run It Locally
 - Clone the repository
-  `git clone https://github.com/mlanda98/to-do-list.git`
-- npm install
-- npx webpack serve
-- Open your browser to `http://localhost:8080`
+  `git clone https://github.com/mlanda98/battleship.git`
+- Make sure you have Node.js installed, then run `npm install`
+- Bundle your code using Webpack: `npm run build`
+- Open your browser to `http://localhost:8080` or use a Live Server extension
+- Run your Jest tests suite: `npm test`
+- Lint: npm run lin
+- Fix lint issues automatically: `npm run lint:fix`
+- Format with Prettier: `npm run format`
 
 ---
 
