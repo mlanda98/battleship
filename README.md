@@ -1,9 +1,5 @@
 # battleship
 
-![Build Status](https://github.com/mlanda98/battleship/actions/workflows/ci.yml/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/mlanda98/battleship/badge.svg?branch=main)](https://coveralls.io/github/mlanda98/battleship?branch=main)
-![ESLint](https://github.com/mlanda98/battleship/workflows/ESLint/badge.svg)
-![License](https://img.shields.io/badge/license-MIT-green)
 A browser-based version of the classic game Battleship, built using JavaScript, HTML, and CSS. Developed using Test Driven Development with Jest.
 
 ---
