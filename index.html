@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Battleship Game</title>
-  <link rel="stylesheet" href="styles.css" >
-<script defer src="main.js"></script></head>
-<body class="light-mode">
-  <div class="container">
-    <div class="header">
-      <h1>Battleship</h1>
-      <button id="toggle-theme">🌙 Dark Mode</button>
-    </div>
-    <div class="gameboard">
-      <div class="board-section">
-        <h2 class="board-title">Player Board</h2>
-        <div id="playerBoard" class="board"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battleship Game</title>
+  <script defer src="main.js"></script></head>
+  <body class="light-mode">
+    <div class="container">
+      <div class="header">
+        <h1>Battleship</h1>
+        <button id="toggle-theme">🌙 Dark Mode</button>
       </div>
-      <div class="board-section">
-        <h2 class="board-title">Computer Board</h2>
-        <div id="computerBoard" class="board"></div>
+      <div class="gameboard">
+        <div class="board-section">
+          <h2 class="board-title">Player Board</h2>
+          <div id="playerBoard" class="board"></div>
+        </div>
+        <div class="board-section">
+          <h2 class="board-title">Computer Board</h2>
+          <div id="computerBoard" class="board"></div>
+        </div>
+      </div>
+      <div class="lower-section">
+        <div id="messages"></div>
+        <button id="start-button">Start Game</button>
       </div>
     </div>
-    <div class="lower-section">
-      <div id="messages"></div>
-      <button id="start-button">Start Game</button>
-    </div>
-  </div>
-    <script src="main.js"></script>
-</body>
+  </body>
+</html>
