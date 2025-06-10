@@ -1,6 +1,6 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable no-undef */
-import Player from './player';
+import Player from '../modules/player';
 
 test('creates a human player with a gameboard', () => {
   const boardSize = 10;

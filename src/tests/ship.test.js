@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import Ship from './ship';
+import Ship from '../modules/ship';
 
 test('should hit the ship and check if it has sunk', () => {
   const ship = new Ship(3);

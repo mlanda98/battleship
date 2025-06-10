@@ -1,7 +1,7 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable no-undef */
-import Gameboard from './gameboard';
-import Ship from './ship';
+import Gameboard from '../modules/gameboard';
+import Ship from '../modules/ship';
 
 test('placing a ship on the board', () => {
   const board = new Gameboard(10);

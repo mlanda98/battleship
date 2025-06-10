@@ -5,9 +5,10 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable radix */
 
-import Ship from './ship';
-import Player from './player';
-import computerTurn from './computerTurn';
+import Ship from './modules/ship';
+import Player from './modules/player';
+import computerTurn from './modules/computerTurn';
+import './styles.css';
 
 let player;
 let computer;
@@ -98,7 +99,8 @@ function renderBoard(boardId, gameboard, clickable) {
   }
 
   if (currentPlayer === player) {
-    messagesElement.textContent = "Your turn! Click on oppenent's board to attack";
+    messagesElement.textContent =
+      "Your turn! Click on oppenent's board to attack";
   } else {
     messagesElement.textContent = "Computer's turn";
   }
@@ -135,4 +137,18 @@ function startGame() {
 
   gameLoop();
 }
+
 document.getElementById('start-button').addEventListener('click', startGame);
+document.getElementById('toggle-theme').addEventListener('click', () => {
+  const { body } = document;
+  const toggle = document.getElementById('toggle-theme');
+
+  body.classList.toggle('dark-mode');
+  body.classList.toggle('light-mode');
+
+  if (body.classList.contains('dark-mode')) {
+    toggle.textContent = '☀️ Light Mode';
+  } else {
+    toggle.textContent = '🌙 Dark Mode';
+  }
+});
