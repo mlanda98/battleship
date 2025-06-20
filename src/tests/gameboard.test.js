@@ -10,8 +10,9 @@ test('placing a ship on the board', () => {
   expect(placed).toBe(true);
 
   const placedShip = board.board[0][0];
+  const hitCount = placedShip.hits.filter(Boolean).length;
   expect(placedShip).toBeDefined();
-  expect(placedShip.hits).toBe(0);
+  expect(hitCount).toBe(0);
   expect(placedShip.length).toBe(3);
 });
 
@@ -21,6 +22,7 @@ test('receiving an attack and check hit/miss', () => {
 
   board.placeShip(ship, 0, 0, 'horizontal');
   const attackResult1 = board.receiveAttack(0, 0);
+
   expect(attackResult1.hit).toBe(true);
   const attackResult2 = board.receiveAttack(0, 1);
   expect(attackResult2.hit).toBe(false);
